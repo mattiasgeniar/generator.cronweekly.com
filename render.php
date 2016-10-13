@@ -105,143 +105,157 @@ if ($_POST['type'] == 'html') {
   </style>
 </head>
 <body bgcolor="#fff" style="margin: 0;" width="100%">
-<center style="width: 100%; background: #fff;"><!-- Visually Hidden Preheader Text : BEGIN -->
-<div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;">News and tools for Linux sysadmins and open source users.</div>
-<!-- Visually Hidden Preheader Text : END --><!--
-            Set the email width. Defined in two places:
-            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 600px.
-            2. MSO tags for Desktop Windows Outlook enforce a 600px width.
-        -->
+  <center style="width: 100%; background: #fff;"><!-- Visually Hidden Preheader Text : BEGIN -->
+    <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;">News and tools for Linux sysadmins and open source users.</div>
+      <!-- Visually Hidden Preheader Text : END --><!--
+          Set the email width. Defined in two places:
+          1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 600px.
+          2. MSO tags for Desktop Windows Outlook enforce a 600px width.
+      -->
 
-<div style="max-width: 600px; margin: auto;"><!--[if mso]>
+    <div style="max-width: 600px; margin: auto;"><!--[if mso]>
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
             <tr>
             <td>
             <![endif]--><!-- Email Header : BEGIN --><!-- Email Header : END --><!-- Email Body : BEGIN -->
-<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width: 600px;" width="100%"><!-- Hero Image, Flush : BEGIN -->
-  <tbody>
-    <tr>
-      <td bgcolor="#333333" style="padding-top: 30px; padding-bottom: 20px; font-family: sans-serif; font-size: 45px; mso-height-rule: exactly; line-height: 45px; color: #eeeeee; text-align:center">CRON.WEEKLY</td>
-    </tr>
-    <tr>
-      <td bgcolor="#333333" style="padding: 20px; font-family: sans-serif; font-size: 25px; mso-height-rule: exactly; line-height: 30px; color: #eeeeee; text-align:center"><?= $title ?></td>
-    </tr>
-    <tr>
-      <td bgcolor="#ffffff" style="padding-top: 20px; font-family: sans-serif; font-size: 20px; mso-height-rule: exactly; line-height: 20px; color: #000000; text-align:center; font-style:italic; ">issue #<?= $issue ?> for <?= $date ?></td>
-    </tr>
-    <tr>
-      <td bgcolor="#ffffff">
-      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width: 600px;" width="100%"><!-- Hero Image, Flush : BEGIN -->
         <tbody>
           <tr>
-            <td style="padding-left: 10px; padding-right: 10px; padding-top: 20px; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555;"><?= $intro ?>
-	    <br /> <br />
-	    <!-- mail body -->
-  	    <?= $content ?>
+            <td bgcolor="#333333" style="padding-top: 30px; padding-bottom: 20px; font-family: sans-serif; font-size: 45px; mso-height-rule: exactly; line-height: 45px; color: #eeeeee; text-align:center">CRON.WEEKLY</td>
           </tr>
-        </tbody>
-      </table>
-      </td>
-    </tr>
-
-
-     <tr>
-      <td bgcolor="#ffffff">
-      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-        <tbody>
           <tr>
-            <td style="padding: 40px; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555;">
-		<hr style="color: #333333; margin-bottom: 15px" />
- 	    	Thanks for reading this week's <em>cron.weekly</em>! Did you like it?
-	    </td>
+            <td bgcolor="#333333" style="padding: 20px; font-family: sans-serif; font-size: 25px; mso-height-rule: exactly; line-height: 30px; color: #eeeeee; text-align:center"><?= $title ?></td>
           </tr>
-        </tbody>
-      </table>
-      </td>
-     </tr>
-
-     <tr>
-      <td align="center" bgcolor="#ffffff" height="100%" style="padding-bottom: 40px" valign="top" width="100%">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width:560px;" width="100%">
-        <tbody>
           <tr>
-            <td align="center" valign="top" width="50%">
-            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="font-size: 14px;text-align: left;" width="100%">
+            <td bgcolor="#ffffff" style="padding-top: 20px; font-family: sans-serif; font-size: 20px; mso-height-rule: exactly; line-height: 20px; color: #000000; text-align:center; font-style:italic; ">issue #<?= $issue ?> for <?= $date ?></td>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">
+              <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                <tbody>
+                  <tr>
+                    <td style="padding-left: 10px; padding-right: 10px; padding-top: 20px; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555;">
+                      <?= $intro ?>
+                      <br /> <br />
+                      <!-- mail body -->
+                      <?= $content ?>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td bgcolor="#ffffff">
+              <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                <tbody>
+                  <tr>
+                    <td style="padding: 40px; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555;">
+                      <hr style="color: #333333; margin-bottom: 15px" />
+                      Thanks for reading this week's <em>cron.weekly</em>! Did you like it?
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+           </tr>
+
+           <tr>
+            <td align="center" bgcolor="#ffffff" height="100%" style="padding-bottom: 40px" valign="top" width="100%">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width:560px;" width="100%">
               <tbody>
                 <tr>
-                  <td style="text-align: center; padding: 0 10px;">
-		    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin: auto;">
-		      <tbody>
-			<tr>
-			  <td class="button-td" style="border-radius: 3px; background: #3bba39; text-align: center;"><a target="_blank" href="https://www.cronweekly.com/i-loved-it/" style="background: #3bba39; border: 15px solid #3bba39; font-family: sans-serif; font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffffff">:-)</span>&nbsp;&nbsp;&nbsp;&nbsp; </a></td>
-			</tr>
-		      </tbody>
-		    </table>
-		  </td>
-                </tr>
-                <tr>
-		  <td class="stack-column-center" style="text-align: center;font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555; padding: 10px 10px 0;">Loved it!</td>
+                  <td align="center" valign="top" width="50%">
+                  <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="font-size: 14px;text-align: left;" width="100%">
+                    <tbody>
+                      <tr>
+                        <td style="text-align: center; padding: 0 10px;">
+                          <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin: auto;">
+                            <tbody>
+                              <tr>
+                                <td class="button-td" style="border-radius: 3px; background: #3bba39; text-align: center;">
+                                  <a target="_blank" href="https://www.cronweekly.com/i-loved-it/" style="background: #3bba39; border: 15px solid #3bba39; font-family: sans-serif; font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span style="color:#ffffff">
+                                      :-)
+                                    </span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                  </a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="stack-column-center" style="text-align: center;font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555; padding: 10px 10px 0;">
+                          Loved it!
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </td>
+                  <td align="center" valign="top" width="50%">
+                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="font-size: 14px;text-align: left;" width="100%">
+                      <tbody>
+                        <tr>
+                          <td style="text-align: center; padding: 0 10px;">
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin: auto;">
+                              <tbody>
+                                <tr>
+                                  <td class="button-td" style="border-radius: 3px; background: #d9403e; text-align: center;">
+                                    <a target="_blank" href="https://www.cronweekly.com/expected-more/" style="background: #d9403e; border: 15px solid #d9403e; font-family: sans-serif; font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;">
+                                      &nbsp;&nbsp;&nbsp;&nbsp;
+                                      <span style="color:#ffffff">
+                                        :-(
+                                      </span>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="stack-column-center" style="text-align: center;font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555; padding: 10px 10px 0;">
+                            I expected better.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
                 </tr>
               </tbody>
             </table>
             </td>
-            <td align="center" valign="top" width="50%">
-            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="font-size: 14px;text-align: left;" width="100%">
-              <tbody>
-                <tr>
-                  <td style="text-align: center; padding: 0 10px;">
-		    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin: auto;">
-		      <tbody>
-			<tr>
-			  <td class="button-td" style="border-radius: 3px; background: #d9403e; text-align: center;"><a target="_blank" href="https://www.cronweekly.com/expected-more/" style="background: #d9403e; border: 15px solid #d9403e; font-family: sans-serif; font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffffff">:-(</span>&nbsp;&nbsp;&nbsp;&nbsp; </a></td>
-			</tr>
-		      </tbody>
-		    </table>
-		  </td>
-                </tr>
-                <tr>
-		  <td class="stack-column-center" style="text-align: center;font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555; padding: 10px 10px 0;">I expected better.</td>
-                </tr>
-              </tbody>
-            </table>
+          </tr>
+
+          <tr>
+            <td height="40" style="font-size: 0; line-height: 0;">&nbsp;</td>
+          </tr>
+
+        </tbody>
+      </table>
+      <!-- Email Body : END --><!-- Email Footer : BEGIN -->
+
+
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width: 680px;" width="100%">
+        <tbody>
+          <tr>
+            <td bgcolor="#333333" style="padding:20px;width: 100%;font-size: 12px; font-family: sans-serif; mso-height-rule: exactly; line-height:18px; text-align: center; color: #ffffff;">
+              <a href="https://www.cronweekly.com/issue-<?= $issue ?>/?via=newsletter" style="font-family: sans-serif; mso-height-rule: exactly; color: #eeeeee;">View this issue online in the archives</a><br />
+              <br />
+              cron.weekly is sent by <a href="https://ma.ttias.be" style="font-family: sans-serif; mso-height-rule: exactly; color: #eeeeee;text-decoration:underline">Mattias Geniar</a> - You signed up at <a href="https://www.cronweekly.com/" style="font-family: sans-serif; mso-height-rule: exactly; color: #eeeeee;text-decoration:underline">cronweekly.com</a><br />
+              <br />
+              Don't like it anymore? You can <unsubscribe style="font-family: sans-serif; mso-height-rule: exactly; color: #eeeeee;text-decoration:underline">unsubscribe</unsubscribe> at any time. No hard feelings.
             </td>
           </tr>
         </tbody>
       </table>
-      </td>
-    </tr>
-
-
-
-    <tr>
-      <td height="40" style="font-size: 0; line-height: 0;">&nbsp;</td>
-    </tr>
-
-  </tbody>
-</table>
-<!-- Email Body : END --><!-- Email Footer : BEGIN -->
-
-
-
-
-<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width: 680px;" width="100%">
-  <tbody>
-    <tr>
-      <td bgcolor="#333333" style="padding:20px;width: 100%;font-size: 12px; font-family: sans-serif; mso-height-rule: exactly; line-height:18px; text-align: center; color: #ffffff;">
-	<a href="https://www.cronweekly.com/issue-<?= $issue ?>/?via=newsletter" style="font-family: sans-serif; mso-height-rule: exactly; color: #eeeeee;">View this issue online in the archives</a><br />
-      	<br />
-      	cron.weekly is sent by <a href="https://ma.ttias.be" style="font-family: sans-serif; mso-height-rule: exactly; color: #eeeeee;text-decoration:underline">Mattias Geniar</a> - You signed up at <a href="https://www.cronweekly.com/" style="font-family: sans-serif; mso-height-rule: exactly; color: #eeeeee;text-decoration:underline">cronweekly.com</a><br />
-      	<br />
-      	Don't like it anymore? You can <unsubscribe style="font-family: sans-serif; mso-height-rule: exactly; color: #eeeeee;text-decoration:underline">unsubscribe</unsubscribe> at any time. No hard feelings.</td>
-    </tr>
-  </tbody>
-</table>
-<!-- Email Footer : END --><!--[if mso]>
-            </td>
-            </tr>
-            </table>
-            <![endif]--></div>
-</center>
+    </div>
+  </center>
 </body>
 </html>
 
