@@ -1,0 +1,69 @@
+<body>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<div class="container">
+	<form class="form-horizontal" method="post" action="/render.php">
+	<fieldset>
+
+	<!-- Form Name -->
+	<h1>cron.weekly mail generator</h1>
+	<br />
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="textinput">Issue #</label>
+	  <div class="col-md-4">
+	  <input id="textinput" name="issue" type="text" placeholder="49" class="form-control input-md">
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="textinput">Title</label>
+	  <div class="col-md-4">
+	  <input id="textinput" name="title" type="text" placeholder="PostgreSQL 9.6, Security, Otto, armor, conferences &amp; more!" class="form-control input-md">
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="textinput">Date</label>
+	  <div class="col-md-4">
+	  <input id="textinput" name="date" type="text" placeholder="October 3rd, 2016" class="form-control input-md">
+	  </div>
+	</div>
+
+	<!-- Textarea -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="textarea">Intro text</label>
+	  <div class="col-md-4">
+	    <textarea class="form-control" id="intro" name="intro" rows="10" cols="30">Lots of variation again that should keep you busy on your Sunday!
+
+I'm also in the process of moving the e-mail list to something self-hosted ...</textarea>
+	  </div>
+	</div>
+
+	<!-- Textarea -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="textarea">Full body content</label>
+	  <div class="col-md-4">
+	    <textarea class="form-control" id="content" name="content" rows="50" cols="30">copy/paste wordpress HTML here</textarea>
+	  </div>
+	</div>
+
+	<div class="form-group">
+	  <div class="col-md-8">
+	    <input type="submit" id="button1id" name="button1id" class="btn btn-success" value="Render!">
+	  </div>
+	</div>
+
+	</fieldset>
+	</form>
+  </div>
+</body>
