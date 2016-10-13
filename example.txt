@@ -1,0 +1,58 @@
+<h1>News</h1>
+<h2><a href="https://kernelnewbies.org/Linux_4.8">Linux kernel 4.8</a></h2>
+Last Sunday, the 4.8 kernel was released: lots of new hardware support, improved drivers and a lot of storage improvements: a btrfs rewrite, the basics to add support for data deduplication and copy-on-write for XFS, ...
+<h2><a href="https://charity.wtf/2016/10/02/the-accidental-dba/">The accidental DBA</a></h2>
+A post I think many of us can relate to: you find yourself being a sysadmin or developer and suddenly <em>you're a database administrator</em>. You can't look at databases the same way you look at webservers, it's a different mindset. This post dives into a post-portem of a "<em>MongoDB gone wrong</em>" and critiques the methods used.
+<h2><a href="https://scotthelme.co.uk/still-think-you-dont-need-https/">Still think you don't need HTTPs?</a></h2>
+By now, everyone benefits from using HTTPs on websites. This post gives a good overview of the reasons <em>why</em> you should switch to HTTPs. Time to use these arguments to change all your configs to TLS!
+<h2><a href="https://fossbytes.com/xenix-history-microsoft-unix-operating-system/">History Of Xenix — Microsoft’s Forgotten Unix-based Operating System</a></h2>
+A bit of Unix trivia I was unaware of: long before Linus Torvalds wrote Linux, Microsoft was the king of Unix world. The company, somehow, developed Xenix, the most popular version of Unix of its time. However, IBM’s decision to go ahead with MS-DOS in its PCs acted as a death blow.
+<h2><a href="https://medium.com/production-ready/on-finding-root-causes-c0ce524bf98b#.rbbio5usm">On Finding Root Causes</a></h2>
+This are inevitably going to break: whether it's hardware, software or human error. This post explains how there's usually not a single cause, but a series of events that lead to downtime and how hidden bias can influence our thinking in finding root causes.
+<h2><a href="https://rethinkdb.com/blog/rethinkdb-shutdown/">RethinkDB is shutting down</a></h2>
+Not so fun news from the community this time: the team behind RethinkDB is shutting down. This document store for (mostly) JSON competed with MongoDB.
+<h2><a href="https://lwn.net/SubscriberLink/702177/e2712c9c41c0c683/">Why kernel development still uses email</a></h2>
+It's only since I started <a href="https://marc.ttias.be/linux-kernel/">mirroring the linux-kernel mailing list</a> that I noticed <em>just how much e-mail </em>goes back and forth with patches and kernel discussion. In this post, the author defends that choice and why it beats systems like GitHub or GitLab.
+<h2><a href="https://blog.mozilla.org/blog/2016/10/03/moss-supports-four-more-open-source-projects-with-300k/">Mozilla Open Source supports 4 more projects for $300k</a></h2>
+A big investment from Mozilla's Open Source Support: they threw 300.000$ to 4 more projects: Redash, Review Board, Kea and Speech Rule Engine.
+<h1>Tools &amp; Projects</h1>
+<h2><a href="https://github.com/dyne/gitzone">gitzone</a></h2>
+Gitzone is a git-based zone file management tool for BIND. Users can update their zones in a git repository then during a push the zone files are checked, updated &amp; reloaded from git receive hooks.
+<h2><a href="https://github.com/zulip/zulip">zulip</a></h2>
+Zulip is a powerful, open source group chat application. Written in Python. Zulip also supports fast search, drag-and-drop file uploads, image previews, group private messages, audible notifications, missed-message emails, desktop apps, and much more.
+<h2><a href="http://proxysql.com/">ProxySQL</a></h2>
+A high-performance MySQL proxy with a GPL license. It has query caching, query routing over multiple backends, failover support, ... The only other competitor in this space I know of is <a href="https://mariadb.com/products/mariadb-maxscale">MariaDB's MaxScale</a>.
+<h2><a href="https://mailinabox.email/">Mail-in-a-box</a></h2>
+A fully featured mail setup: webmail, IMAP &amp; SMTP server, spam &amp; greylisting, backups to Amazon S3, Let's Encrypt support, ...
+<h2><a href="http://gitless.com/">gitless</a></h2>
+This is sort of a shell <em>on top of </em>git. It tries to make <em>git</em> less complicated but is still compatible with the "standard" git implementation, as it's basically git behind the scenes.
+<h2><a href="https://cypht.org/">cypht</a></h2>
+Cypht is like a news reader, but for E-mail. Cypht does not replace your existing accounts - it combines them into one. And it's also a news reader. <span style="color: #ff9900;"><em>(Sponsored)</em></span>
+<h2><a href="https://github.com/nwops/puppet-retrospec">puppet-retrospec</a></h2>
+A retrospec plugin for puppet that generates puppet rspec test code based on the current code inside your module. It basically writes all your tests for you. Sort of.
+<h1>Guides &amp; Tutorials</h1>
+<h2><a href="https://idea.popcount.org/2016-09-20-strange-loop---ip-spoofing/">IP Spoofing</a></h2>
+A very nice write-up on a presentation given at Strange Loop about IP spoofing, how it works, how they're used in DDoS attacks and how you can prevent them as a sysadmin or network engineer.
+<h2><a href="https://medium.com/@laszlocph/a-simple-jenkis-2-0-and-docker-workflow-9cd2a7232037#.tm2ty56qq">A simple Jenkis 2.0 and Docker workflow</a></h2>
+In this article the author shows a Docker based workflow in Jenkins 2.0 with both the CI pipeline and the build environment version controlled. The end result is a container with code ready to deploy.
+<h2><a href="http://www.brendangregg.com/blog/2016-10-06/linux-bcc-ext4dist-ext4slower.html">Linux bcc ext4 Latency Tracing</a></h2>
+In this post Brendan Gregg introduces the <em>ext4dist</em> and <em>ext4slower </em>tools to look at the system for metrics on <em>how</em> I/O performance impacts the running applications.
+<h2><a href="https://sanctum.geek.nz/arabesque/vim-anti-patterns/">Vim anti-patterns</a></h2>
+Did you, like me, learn vim years ago? Maybe you're still using a few shortcuts or commands that can be made more efficient. This post lists the most frequent "quick wins" in terms of efficiency when using vim.
+<h2><a href="https://www.citusdata.com/blog/2016/10/03/designing-your-saas-database-for-high-scalability/">Designing your SaaS Database for Scale with Postgres</a></h2>
+Some good pointers on where and how to design your PostgreSQL schema/structure when trying to build a multi-tenant SaaS offering, contains a couple of practical tips for DBA's too.
+<h2><a href="https://outflux.net/blog/archives/2016/10/04/security-things-in-linux-v4-8/">Security things in kernel 4.8</a></h2>
+A very nice overview of security features that landed in the 4.8 kernel: many things I can't even fake understanding, I hope they make more sense to you than they did to me.
+<h2><a href="http://jvns.ca/blog/2016/10/02/i-just-want-to-run-a-container/">"I just want to run a container!"</a></h2>
+This write-up talks honestly about what it's like to run 1 or 50 containers, the lessons learned, the design decisions between Docker vs. Rkt, ...
+<h2><a href="http://blog.taadeem.net///english/2016/10/01/6_reasons_to_choose_PostgreSQL_9.6">6 reasons to choose PostgreSQL 9.6</a></h2>
+There's a new PostgreSQL version out, but why upgrade? This post gives the biggest reasons: parallelism, better lock monitoring, synced standby's and a safer replication model called "remote apply".
+<h2><a href="https://www.datadoghq.com/blog/monitor-elasticsearch-performance-metrics/">How to monitor Elasticsearch performance</a></h2>
+Lots of practical tips &amp; metrics to watch in your Elasticsearch environment to monitor your performance.
+<h2><a href="https://fredrb.github.io/2016/10/01/Understanding-proc/">Understanding /proc</a></h2>
+A dive into the <em>procfs</em> (/proc file system) to better understand what goes on behind the scenes of a process.
+<h2><a href="http://jvns.ca/blog/2016/10/04/exec-will-eat-your-brain/">What happens when you start a process on Linux?</a></h2>
+Like the previous post, this article describes what happens when new processes spawn: from system calls to environment variables to parents/children &amp; forks.
+<h1>Videos</h1>
+<h2><a href="https://www.youtube.com/channel/UCb9XEo_1SDNR8Ucpbktrg5A/videos">LaraconEU 2016 videos</a></h2>
+In August 2016 the Laracon conference held place in Amsterdam, focusing talks on the Laravel PHP framework. Lots of talks are now online about scaling applications, Varnish, introducing TDD, MySQL 5.6 changes, ...

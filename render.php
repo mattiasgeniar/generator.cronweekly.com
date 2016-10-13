@@ -1,8 +1,4 @@
 <?php
-/* CSS styles */
-$h1 = "font-family: Helvetica; font-size: 33px; line-height: 1.1;";
-$h2 = "font-family: Helvetica; font-size: 20px; line-height: 1.1;";
-$href = "word-wrap:break-word;color:#080808;font-weight:normal;text-decoration:underline;";
 
 /* XSS AHOY */
 $title = $_POST['title'];
@@ -10,13 +6,23 @@ $date = $_POST['date'];
 $issue = $_POST['issue'];
 
 /* text area's */
-$intro = nl2br($_POST['intro']);
+$intro = $_POST['intro'];
 $content = $_POST['content'];
 
-$content = str_replace('<h1>', '<h1 style="'. $h1 .'">', $content);
-$content = str_replace('<h2>', '<h2 style="'. $h2 .'">', $content);
-$content = str_replace('<a href=', '<a target="_blank" style="'. $href .'" href=', $content);
+if ($_POST['type'] == 'html') {
+  /* CSS styles */
+  $h1 = "font-family: Helvetica; font-size: 33px; line-height: 1.1;";
+  $h2 = "font-family: Helvetica; font-size: 20px; line-height: 1.1;";
+  $href = "word-wrap:break-word;color:#080808;font-weight:normal;text-decoration:underline;";
 
+  /* <br />'s, please */
+  $intro = nl2br($intro);
+
+  $content = str_replace('<h1>', '<h1 style="'. $h1 .'">', $content);
+  $content = str_replace('<h2>', '<h2 style="'. $h2 .'">', $content);
+  $content = str_replace('<a href=', '<a target="_blank" style="'. $href .'" href=', $content);
+
+  /* Start HTML content */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -238,3 +244,60 @@ $content = str_replace('<a href=', '<a target="_blank" style="'. $href .'" href=
 </center>
 </body>
 </html>
+
+<?php
+} /* End of HTML content */
+elseif ($_POST['type'] == 'text') {
+  /* Let's display Text, should be easier than HTML - amirite? */
+  $title = $_POST['title'];
+  $date = $_POST['date'];
+  $issue = $_POST['issue'];
+
+  /* text area's */
+  $intro = $_POST['intro'];
+  $content = $_POST['content'];
+
+  /* Translate the wordpress HTML to "plain text" */
+  $content = str_replace('&amp;', '&', $content);
+
+  /* Remove ridiculous HTML tags in Text */
+  $content = str_replace(array('<em>', '</em>'), '', $content);
+
+  /* Translate H1 header tags (titles) */
+  $content = str_replace('<h1>', "\n\n\n*** ". $h1, $content);
+  $content = str_replace('</h1>', "\n==============================================\n", $content);
+
+  /* Translate H2 header tags (titles with links) */
+  $content = str_replace('<h2>', "\n\n** ". $h2, $content);
+  $content = str_replace('</h2>', "\n----------------------------------------------------------------------------------", $content);
+
+  /* Translate any links */
+  $pattern = '|<a href="(.*)">(.*)</a>|';
+  $replacement = '${2} (${1})';
+  $content = preg_replace($pattern, $replacement, $content);
+
+  /* Remove formatting from the 'sponsored' posts */
+  $content = str_replace('<span style="color: #ff9900;">', '', $content);
+  $content = str_replace('</span>', '', $content);
+
+  # Let the browser know it's plain Text
+  header('Content-Type: text/plain');
+?>
+
+CRON.WEEKLY
+
+View this issue in your browser: https://www.cronweekly.com/archives/
+
+*** issue #<?= $issue ?> for <?= $date ?>
+
+==============================================
+
+<?= $intro ?>
+
+<?= $content ?>
+
+<?php
+} /* End of TEXT content */
+else {
+  die('Biep, no type (text/html) selected. Try again.');
+}
