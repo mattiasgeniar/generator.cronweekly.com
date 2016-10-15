@@ -283,7 +283,7 @@ elseif ($_POST['type'] == 'text') {
 
   /* Translate H2 header tags (titles with links) */
   $content = str_replace('<h2>', "\n\n** ". $h2, $content);
-  $content = str_replace('</h2>', "\n----", $content);
+  $content = str_replace('</h2>', "\n", $content);
 
   /* Translate any links */
   $pattern = '|<a href="(.*)">(.*)</a>|';
