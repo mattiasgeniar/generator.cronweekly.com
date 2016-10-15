@@ -279,11 +279,11 @@ elseif ($_POST['type'] == 'text') {
 
   /* Translate H1 header tags (titles) */
   $content = str_replace('<h1>', "\n\n\n*** ". $h1, $content);
-  $content = str_replace('</h1>', "\n==============================================\n", $content);
+  $content = str_replace('</h1>', "\n====\n", $content);
 
   /* Translate H2 header tags (titles with links) */
   $content = str_replace('<h2>', "\n\n** ". $h2, $content);
-  $content = str_replace('</h2>', "\n----------------------------------------------------------------------------------", $content);
+  $content = str_replace('</h2>', "\n----", $content);
 
   /* Translate any links */
   $pattern = '|<a href="(.*)">(.*)</a>|';
