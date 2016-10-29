@@ -121,6 +121,9 @@ if ($_POST['type'] == 'html') {
       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width: 600px;" width="100%"><!-- Hero Image, Flush : BEGIN -->
         <tbody>
           <tr>
+            <td bgcolor="#ffffff" style="text-align: right; font-family: sans-serif; font-size: 12px; mso-height-rule: exactly; color: #eeeeee; line-height: 25px;"><a href="https://www.cronweekly.com/issue-<?= $issue ?>" target="_blank" style="color: #ababab">Read this issue online</a></td>
+          </tr>
+          <tr>
             <td bgcolor="#333333" style="padding-top: 30px; padding-bottom: 20px; font-family: sans-serif; font-size: 45px; mso-height-rule: exactly; line-height: 45px; color: #eeeeee; text-align:center">CRON.WEEKLY</td>
           </tr>
           <tr>
@@ -300,7 +303,7 @@ elseif ($_POST['type'] == 'text') {
 
 CRON.WEEKLY
 
-View this issue in your browser: https://www.cronweekly.com/archives/
+View this issue in your browser: https://www.cronweekly.com/issue-<?= $issue ?>
 
 *** issue #<?= $issue ?> for <?= $date ?>
 
