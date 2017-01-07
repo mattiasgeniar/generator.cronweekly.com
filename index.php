@@ -32,10 +32,14 @@
 	</div>
 
 	<!-- Text input-->
+	<?php
+		$date = @strtotime("next sunday");
+		$date_display = "Sunday, ". @date('F', $date) ." ". @date('j', $date) .", ". @date('Y', $date);
+	?>
 	<div class="form-group">
 	  <label class="col-md-2 control-label" for="textinput">Date</label>
 	  <div class="col-md-8">
-	  <input id="textinput" name="date" type="text" placeholder="October 3rd, 2016" class="form-control input-md">
+	  <input id="textinput" name="date" type="text" placeholder="<?= $date_display ?>" class="form-control input-md" value="<?= $date_display ?>">
 	  </div>
 	</div>
 
