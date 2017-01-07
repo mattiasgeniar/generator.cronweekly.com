@@ -276,9 +276,11 @@ elseif ($_POST['type'] == 'text') {
 
   /* Translate the wordpress HTML to "plain text" */
   $content = str_replace('&amp;', '&', $content);
+  $intro = str_replace('&amp;', '&', $intro);
 
   /* Remove ridiculous HTML tags in Text */
   $content = str_replace(array('<em>', '</em>'), '', $content);
+  $intro = str_replace(array('<em>', '</em>'), '', $intro);
 
   /* Translate H1 header tags (titles) */
   $content = str_replace('<h1>', "\n\n\n*** ". $h1, $content);
@@ -292,6 +294,7 @@ elseif ($_POST['type'] == 'text') {
   $pattern = '|<a href="(.*)">(.*)</a>|';
   $replacement = '${2} (${1})';
   $content = preg_replace($pattern, $replacement, $content);
+  $intro = preg_replace($pattern, $replacement, $intro);
 
   /* Remove formatting from the 'sponsored' posts */
   $content = str_replace('<span style="color: #ff9900;">', '', $content);
