@@ -9,6 +9,36 @@ $issue = $_POST['issue'];
 $intro = $_POST['intro'];
 $content = $_POST['content'];
 
+function drawBorder ($text) {
+  $count = strlen($text);
+
+  $border = "";
+  for ($i = 0; $i < $count; $i++) {
+    $border .= "=";
+  }
+
+  return "\n". $border ."\n";
+}
+
+function prepareLink ($matches) {
+  $link     = $matches[1];
+  $new_link = "";
+  $new_text = $matches[2];
+
+  if (stristr($link, "?")) {
+    # Link already contains a ?, don't mess with these
+    $new_link = $link;
+  } else {
+    $new_link = $link . "?utm_source=cronweekly.com";
+  }
+
+  return '<a href="'. $new_link .'">'. $new_text .'</a>';
+}
+
+# Prep all links, add our utm_content link
+$pattern = '|<a href="(.*)">(.*)</a>|';
+$content = preg_replace_callback($pattern, 'prepareLink', $content);
+
 if ($_POST['type'] == 'html') {
   /* CSS styles */
   $h1 = "font-family: Helvetica; font-size: 33px; line-height: 1.1;";
@@ -270,10 +300,6 @@ elseif ($_POST['type'] == 'text') {
   $date = $_POST['date'];
   $issue = $_POST['issue'];
 
-  /* text area's */
-  $intro = $_POST['intro'];
-  $content = $_POST['content'];
-
   /* Translate the wordpress HTML to "plain text" */
   $content = str_replace('&amp;', '&', $content);
   $intro = str_replace('&amp;', '&', $intro);
@@ -283,8 +309,14 @@ elseif ($_POST['type'] == 'text') {
   $intro = str_replace(array('<em>', '</em>'), '', $intro);
 
   /* Translate H1 header tags (titles) */
-  $content = str_replace('<h1>', "\n\n\n*** ". $h1, $content);
-  $content = str_replace('</h1>', "\n====\n", $content);
+  $content = preg_replace_callback(
+    '|<h1>(.*)</h1>|',
+    function ($matches) {
+        $title = "** ". $matches[1];
+        return "\n\n". $title . drawBorder($title);
+    },
+    $content
+  );
 
   /* Translate H2 header tags (titles with links) */
   $content = str_replace('<h2>', "\n\n** ". $h2, $content);
@@ -298,19 +330,24 @@ elseif ($_POST['type'] == 'text') {
 
   /* Remove formatting from the 'sponsored' posts */
   $content = str_replace('<span style="color: #ff9900;">', '', $content);
+  $content = str_replace('<span style="color: #ff6600;">', '', $content);
   $content = str_replace('</span>', '', $content);
 
   # Let the browser know it's plain Text
   header('Content-Type: text/plain');
+
+  $title = "*** issue #". $issue ." for ". $date;
+
+
 ?>
 
 CRON.WEEKLY
 
-View this issue in your browser: https://www.cronweekly.com/issue-<?= $issue ?>
+(View this issue in your browser: https://www.cronweekly.com/issue-<?= $issue ?>)
 
-*** issue #<?= $issue ?> for <?= $date ?>
 
-==============================================
+<?= $title ?>
+<?= drawBorder($title) ?>
 
 <?= $intro ?>
 

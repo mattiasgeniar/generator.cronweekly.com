@@ -7,6 +7,14 @@
 
 <body>
 
+<?php
+# Generate the most probably next issue number
+$issue_71_release_date = strtotime("2017-03-12 00:00:00");
+$today                 = time();
+
+$next_issue = round((($today - $issue_71_release_date) / 60 / 60 / 24 / 7) + 71, 0);
+?>
+
 <div class="container">
 	<form class="form-horizontal" method="post" action="/render.php">
 	<fieldset>
@@ -19,7 +27,7 @@
 	<div class="form-group">
 	  <label class="col-md-2 control-label" for="textinput">Issue #</label>
 	  <div class="col-md-8">
-	  <input id="textinput" name="issue" type="text" placeholder="49" class="form-control input-md">
+	  <input id="textinput" name="issue" type="text" placeholder="<?= $next_issue ?>" class="form-control input-md" value="<?= $next_issue ?>">
 	  </div>
 	</div>
 
