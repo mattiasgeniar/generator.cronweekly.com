@@ -154,10 +154,10 @@ if ($_POST['type'] == 'html') {
             <td bgcolor="#ffffff" style="text-align: right; font-family: sans-serif; font-size: 12px; mso-height-rule: exactly; color: #eeeeee; line-height: 25px;"><a href="https://www.cronweekly.com/issue-<?= $issue ?>" target="_blank" style="color: #ababab">Read this issue online</a></td>
           </tr>
           <tr>
-            <td bgcolor="#333333" style="padding-top: 30px; padding-bottom: 20px; font-family: sans-serif; font-size: 45px; mso-height-rule: exactly; line-height: 45px; color: #eeeeee; text-align:center">CRON.WEEKLY</td>
+            <td bgcolor="#333333" style="padding-top: 30px; padding-bottom: 20px; font-family: sans-serif; font-size: 40px; mso-height-rule: exactly; line-height: 40px; color: #eeeeee; text-align:center">CRON.WEEKLY</td>
           </tr>
           <tr>
-            <td bgcolor="#333333" style="padding: 20px; font-family: sans-serif; font-size: 25px; mso-height-rule: exactly; line-height: 30px; color: #eeeeee; text-align:center"><?= $title ?></td>
+            <td bgcolor="#333333" style="padding: 20px; font-family: sans-serif; font-size: 20px; mso-height-rule: exactly; line-height: 30px; color: #eeeeee; text-align:center"><?= $title ?></td>
           </tr>
           <tr>
             <td bgcolor="#ffffff" style="padding-top: 20px; font-family: sans-serif; font-size: 20px; mso-height-rule: exactly; line-height: 20px; color: #000000; text-align:center; font-style:italic; ">issue #<?= $issue ?> for <?= $date ?></td>
