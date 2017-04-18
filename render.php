@@ -41,8 +41,8 @@ $content = preg_replace_callback($pattern, 'prepareLink', $content);
 
 if ($_POST['type'] == 'html') {
   /* CSS styles */
-  $h1 = "font-family: Helvetica; font-size: 33px; line-height: 1.1;";
-  $h2 = "font-family: Helvetica; font-size: 20px; line-height: 1.1;";
+  $h1 = "font-family: Helvetica; font-size: 33px; line-height: 1.1; display: block; margin-top: 16px; margin-bottom: 16px";
+  $h2 = "font-family: Helvetica; font-size: 20px; line-height: 1.1; display: block; margin-top: 22px; margin-bottom: 22px";
   $href = "word-wrap:break-word;color:#080808;font-weight:normal;text-decoration:underline;";
 
   /* <br />'s, please */
