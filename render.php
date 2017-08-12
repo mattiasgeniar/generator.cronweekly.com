@@ -281,6 +281,7 @@ if ($_POST['type'] == 'html') {
               <a href="https://www.cronweekly.com/issue-<?= $issue ?>/?via=newsletter" style="font-family: sans-serif; mso-height-rule: exactly; color: #eeeeee;">View this issue online in the archives</a><br />
               <br />
               cron.weekly is sent by <a href="https://ma.ttias.be" style="font-family: sans-serif; mso-height-rule: exactly; color: #eeeeee;text-decoration:underline">Mattias Geniar</a> - You signed up at <a href="https://www.cronweekly.com/" style="font-family: sans-serif; mso-height-rule: exactly; color: #eeeeee;text-decoration:underline">cronweekly.com</a><br />
+              join the discussions on the forum at <a href="https://ask.cronweekly.com/" style="font-family: sans-serif; mso-height-rule: exactly; color: #eeeeee;text-decoration:underline">ask.cronweekly.com</a> - interested in <a href="https://www.cronweekly.com/advertising/" style="font-family: sans-serif; mso-height-rule: exactly; color: #eeeeee;text-decoration:underline">advertising</a>?<br />
               <br />
               Don't like it anymore? You can <unsubscribe style="font-family: sans-serif; mso-height-rule: exactly; color: #eeeeee;text-decoration:underline">unsubscribe</unsubscribe> at any time. No hard feelings.
             </td>
