@@ -20,25 +20,6 @@ function drawBorder ($text) {
   return "\n". $border ."\n";
 }
 
-function prepareLink ($matches) {
-  $link     = $matches[1];
-  $new_link = "";
-  $new_text = $matches[2];
-
-  if (stristr($link, "?")) {
-    # Link already contains a ?, don't mess with these
-    $new_link = $link;
-  } else {
-    $new_link = $link . "?utm_source=cronweekly.com";
-  }
-
-  return '<a href="'. $new_link .'">'. $new_text .'</a>';
-}
-
-# Prep all links, add our utm_content link
-$pattern = '|<a href="(.*)">(.*)</a>|';
-$content = preg_replace_callback($pattern, 'prepareLink', $content);
-
 if ($_POST['type'] == 'html') {
   /* CSS styles */
   $h1 = "font-family: Helvetica; font-size: 33px; line-height: 1.1; display: block; margin-top: 22px; margin-bottom: 22px";
