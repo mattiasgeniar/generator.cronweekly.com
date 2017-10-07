@@ -12,7 +12,7 @@
 $issue_71_release_date = strtotime("2017-03-12 00:00:00");
 $today                 = time();
 
-$next_issue = round((($today - $issue_71_release_date) / 60 / 60 / 24 / 7) + 71, 0) + 1;
+$next_issue = round((($today - $issue_71_release_date) / 60 / 60 / 24 / 7) + 71, 0) - 1;
 ?>
 
 <div class="container">
